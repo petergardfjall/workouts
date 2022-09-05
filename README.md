@@ -1,4 +1,5 @@
 # About
+
 `workouts` extracts interval sequences from activities backed-up by
 [garminexport](https://github.com/petergardfjall/garminexport).
 
@@ -12,10 +13,31 @@ meters to avoid counting strides as intervals).
 
 For full details on its usage run:
 
-``` bash
+```bash
 ./workouts --help
 ```
 
 # Development
 
 Use `LOG_LEVEL=debug` to get debug output.
+
+# Convenience scripts
+
+A couple of convenience scripts are also included:
+
+- `pace.py`: given a time and distance, calculates the pace.
+
+  ```bash
+  ./pace.py 35:00 10000
+  ```
+
+- `pacer.py`: a simple script for calculating target paces to run at as a given
+  percentage of a certain source pace (such as your 5K pace).
+
+  Sample use: my current 5K race result is 03:50 min/km and I want to find out
+  what pace to train at if I want to train at 104%, 95% and 90% of the 5K pace,
+  respectively.
+
+  ```bash
+  ./pacer.py 03:50 104 95 90
+  ```
